@@ -1,14 +1,24 @@
+# First, we set a function
 def massiv(str):
-    data = []
+   # set an array
+   data = []
+    # describe the cycle that goes through each character in the line
     for i,c in enumerate(str):
-        if str[i].isalpha():
+       # checking each chaacter whether it is a letter 
+       if str[i].isalpha():
+            # if a character is a letter, then checking it's index and the previous character
             if (i>0) and (str[i-1].isalpha()):
+                # if previous is true, than we go to the next character
                 continue
+            # if previous is false, than we remember the index
             else:
                 nomer1 = i
+       # if  a character isn't a letter, than checking it's index and the previous character
         else:
             if (i>0) and (str[i-1].isalpha()):
+                # we fill the array
                 data.append(str[nomer1:i])
     return(data)
+# s will be a line\ sequence of characters
 s = input()+' '
 print(massiv(s))
